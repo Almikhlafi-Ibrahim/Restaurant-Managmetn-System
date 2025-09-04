@@ -37,6 +37,9 @@ namespace Restaurant_Managmetn_System
             frmSineUp frmSineUp = new frmSineUp();
             this.Hide(); // Hide the current form
             frmSineUp.Show();
+
+
+            //this is
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
