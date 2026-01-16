@@ -10,17 +10,20 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Configuration;
 
 namespace Restaurant_Managmetn_System
 {
     public partial class frmSineUp: Form
     {
 
-        string connString = @"Data Source=IbrahimPc\NAME2;
-                            Initial Catalog=A1Restaurant;
-                            Integrated Security=True;
-                            Connect Timeout=30;Encrypt=False
-                          ";
+        //string connString = @"Data Source=IbrahimPc\NAME2;
+        //                    Initial Catalog=A1Restaurant;
+        //                    Integrated Security=True;
+        //                    Connect Timeout=30;Encrypt=False
+        //                  ";
+        readonly string connString = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+
         public frmSineUp()
         {
             InitializeComponent();

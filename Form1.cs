@@ -9,16 +9,15 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Restaurant_Managmetn_System
 {
     public partial class Form1: Form
     {
-        string connString = @"Data Source=IbrahimPc\NAME2;
-                            Initial Catalog=A1Restaurant;
-                            Integrated Security=True;
-                            Connect Timeout=30;Encrypt=False
-                          ";
+
+        readonly string connString = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+
         public Form1()
         {
             InitializeComponent();
@@ -45,50 +44,50 @@ namespace Restaurant_Managmetn_System
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             ////tem 
-            ////MessageBox.Show($"Wellcome {txtUsername.Text.Trim()}good to go press ok to continue");
+            //MessageBox.Show($"Wellcome {txtUsername.Text.Trim()}good to go press ok to continue");
             //frmMainForm maainFomr = new frmMainForm();
             //this.Hide();
             //maainFomr.Show();
 
-            
-              using (SqlConnection conn = new SqlConnection(connString)) 
-              {
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
 
 
 
-                      conn.Open();
-                      string qure = "Select * from users where username=@userName and password=@Password";
+                conn.Open();
+                string qure = "Select * from users where username=@userName and password=@Password";
 
-                  using (SqlCommand myCommnd = new SqlCommand(qure, conn))
-                  {
+                using (SqlCommand myCommnd = new SqlCommand(qure, conn))
+                {
 
-                      myCommnd.Parameters.AddWithValue("@userName", txtUsername.Text.Trim());
-                      myCommnd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
+                    myCommnd.Parameters.AddWithValue("@userName", txtUsername.Text.Trim());
+                    myCommnd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
 
-                      SqlDataAdapter dataAdapter = new SqlDataAdapter(myCommnd);
-                      DataTable MyTable = new DataTable();
-                      dataAdapter.Fill(MyTable);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(myCommnd);
+                    DataTable MyTable = new DataTable();
+                    dataAdapter.Fill(MyTable);
 
-                      if(MyTable.Rows.Count >0)
-                      {
-                          MessageBox.Show($"Wellcome {txtUsername.Text.Trim()}good to go press ok to continue");
-                          frmMainForm maainFomr = new frmMainForm();
-                          this.Hide();
-                          maainFomr.Show();
+                    if (MyTable.Rows.Count > 0)
+                    {
+                        MessageBox.Show($"Wellcome {txtUsername.Text.Trim()}good to go press ok to continue");
+                        frmMainForm maainFomr = new frmMainForm();
+                        this.Hide();
+                        maainFomr.Show();
 
-                      }
-                      else
-                      {
-                          MessageBox.Show("Your are not registerd  ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your are not registerd  ");
 
-                      }
+                    }
 
 
-                  }
+                }
 
-              }
+            }
 
-              
+
 
         }
 

@@ -47,8 +47,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>RestaurantAppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="catogryList.cs" />
+    <Compile Include="clsproductList.cs" />
+    <Compile Include="customerList.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,11 +107,23 @@
     <Compile Include="UserConInvetnroy.Designer.cs">
       <DependentUpon>UserConInvetnroy.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlAboutUs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlAboutUs.Designer.cs">
+      <DependentUpon>UserControlAboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlDashBord.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlDashBord.Designer.cs">
       <DependentUpon>UserControlDashBord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlProductCard.Designer.cs">
+      <DependentUpon>UserControlProductCard.cs</DependentUpon>
     </Compile>
     <Compile Include="userCoShop.cs">
       <SubType>UserControl</SubType>
@@ -139,8 +159,14 @@
     <EmbeddedResource Include="UserConInvetnroy.resx">
       <DependentUpon>UserConInvetnroy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlAboutUs.resx">
+      <DependentUpon>UserControlAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlDashBord.resx">
       <DependentUpon>UserControlDashBord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProductCard.resx">
+      <DependentUpon>UserControlProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userCoShop.resx">
       <DependentUpon>userCoShop.cs</DependentUpon>
@@ -184,6 +210,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="asset\icons8-money-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-email-45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-email-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-github-logo-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RestaurantAppIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

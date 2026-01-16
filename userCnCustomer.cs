@@ -15,6 +15,16 @@ namespace Restaurant_Managmetn_System
         public userCnCustomer()
         {
             InitializeComponent();
+            customerListsDataLoadd();
+
+        }
+
+        public void customerListsDataLoadd(  )
+        {
+            // Load customer data into the DataGridView
+            customerList cl = new customerList();
+            dataGridView1.DataSource = cl.customerListsData();
+
         }
     }
 }

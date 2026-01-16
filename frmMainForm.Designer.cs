@@ -32,21 +32,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnCatogres = new System.Windows.Forms.Button();
             this.btnCustoer = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnShop = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.userControlAboutUs2 = new Restaurant_Managmetn_System.UserControlAboutUs();
             this.userCnCustomer1 = new Restaurant_Managmetn_System.userCnCustomer();
             this.userConCatogry1 = new Restaurant_Managmetn_System.UserConCatogry();
             this.userConInvetnroy1 = new Restaurant_Managmetn_System.UserConInvetnroy();
             this.userCoShop1 = new Restaurant_Managmetn_System.userCoShop();
             this.userControlDashBord1 = new Restaurant_Managmetn_System.UserControlDashBord();
-            this.button1 = new System.Windows.Forms.Button();
+            this.userControlDashBord2 = new Restaurant_Managmetn_System.UserControlDashBord();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,13 +100,31 @@
             this.panel2.Controls.Add(this.btnInventory);
             this.panel2.Controls.Add(this.btnShop);
             this.panel2.Controls.Add(this.btnDashboard);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblWelcome);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(257, 727);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(130)))), ((int)(((byte)(98)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(130)))), ((int)(((byte)(98)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(15, 536);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 36);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "About";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
@@ -209,16 +229,16 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // label2
+            // lblWelcome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(83, 142);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Welcom Admin";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(83, 142);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(122, 20);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Welcom Admin";
             // 
             // pictureBox1
             // 
@@ -231,16 +251,25 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.userControlDashBord2);
+            this.panel3.Controls.Add(this.userControlAboutUs2);
             this.panel3.Controls.Add(this.userCnCustomer1);
             this.panel3.Controls.Add(this.userConCatogry1);
             this.panel3.Controls.Add(this.userConInvetnroy1);
             this.panel3.Controls.Add(this.userCoShop1);
-            this.panel3.Controls.Add(this.userControlDashBord1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(257, 35);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1085, 727);
             this.panel3.TabIndex = 3;
+            // 
+            // userControlAboutUs2
+            // 
+            this.userControlAboutUs2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.userControlAboutUs2.Location = new System.Drawing.Point(0, 0);
+            this.userControlAboutUs2.Name = "userControlAboutUs2";
+            this.userControlAboutUs2.Size = new System.Drawing.Size(1082, 724);
+            this.userControlAboutUs2.TabIndex = 5;
             // 
             // userCnCustomer1
             // 
@@ -282,21 +311,13 @@
             this.userControlDashBord1.Size = new System.Drawing.Size(1085, 727);
             this.userControlDashBord1.TabIndex = 0;
             // 
-            // button1
+            // userControlDashBord2
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(130)))), ((int)(((byte)(98)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(130)))), ((int)(((byte)(98)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(15, 536);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "About";
-            this.button1.UseVisualStyleBackColor = false;
+            this.userControlDashBord2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.userControlDashBord2.Location = new System.Drawing.Point(0, -3);
+            this.userControlDashBord2.Name = "userControlDashBord2";
+            this.userControlDashBord2.Size = new System.Drawing.Size(1085, 730);
+            this.userControlDashBord2.TabIndex = 6;
             // 
             // frmMainForm
             // 
@@ -330,7 +351,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnShop;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnCatogres;
@@ -338,10 +359,14 @@
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Panel panel3;
         private UserControlDashBord userControlDashBord1;
+
         private userCoShop userCoShop1;
         private UserConInvetnroy userConInvetnroy1;
         private UserConCatogry userConCatogry1;
         private userCnCustomer userCnCustomer1;
         private System.Windows.Forms.Button button1;
+        //private UserControlAboutUs userControlAboutUs1;
+        private UserControlAboutUs userControlAboutUs2;
+        private UserControlDashBord userControlDashBord2;
     }
 }
